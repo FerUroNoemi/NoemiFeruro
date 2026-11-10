@@ -1,7 +1,7 @@
 # Proyecto: Fernandez_Urones_Noemi_Fase2
 
 ## Enlace a la web publicada
-https://github.com/FerUroNoemi/NoemiFeruro.git
+https://feruronoemi.github.io/NoemiFeruro/
 
 ## Justificación técnica: CSS Grid vs. Flexbox
 
