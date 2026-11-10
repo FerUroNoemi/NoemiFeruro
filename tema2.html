@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tema 2 - Diseño de Interfaces Web</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <div class="marco">
+
+
+    <header class="cabecera">
+      <a class="enlaceLogo" href="index.html">
+        <img class="imgLogo" src="img/LOGODAW.png" alt="Logotipo de Diseño de Interfaces Web">
+      </a>
+
+      <div class="cabecera-centro">
+        <h1>Tema 2</h1>
+        <nav>
+          <a href="tema3.html">Siguiente &rarr;</a>
+        </nav>
+      </div>
+    </header>
+
+
+    <main class="columnaContenido">
+      <div class="cajaTexto">
+<h2>Uso de estilos</h2>
+
+<p>Cuando visitamos una página web, lo primero que percibimos es su apariencia: los colores, las imágenes, la distribución de los contenidos, los botones y la forma en la que podemos desplazarnos por ella. Sin embargo, detrás de todos esos elementos existe una estructura que hace posible su funcionamiento. En el desarrollo web, HTML y CSS trabajan conjuntamente para dar forma a esa experiencia. HTML establece qué elementos forman parte de la página y cómo se organiza la información, mientras que CSS se encarga de definir cómo se muestran visualmente. Comprender la relación entre ambos lenguajes es uno de los primeros pasos para desarrollar sitios web atractivos, ordenados y adaptables.
+
+<br>
+
+<h3>HTML: los cimientos de cualquier página web</h3>
+
+<p>HTML (HyperText Markup Language) es un lenguaje de marcado que permite estructurar y organizar el contenido de una página web. Mediante etiquetas, podemos indicar al navegador qué elementos debe mostrar y qué función cumple cada uno: títulos, párrafos, imágenes, enlaces, listas, formularios o secciones completas.</p>
+<br>
+
+<p>Todo documento HTML sigue una estructura básica. En primer lugar, encontramos la declaración del tipo de documento, que indica al navegador que debe interpretar el contenido utilizando HTML5. A continuación, la etiqueta html engloba todo el documento y contiene dos partes principales: head y body.</p>
+<br>
+
+<p>La sección head almacena información necesaria para configurar la página, como el título que aparece en la pestaña del navegador, la codificación de caracteres, los metadatos y los enlaces a archivos externos. Por otro lado, body contiene todos los elementos que el usuario puede visualizar e interpretar cuando accede al sitio web.</p>
+<br>
+
+<p>Una de las características más importantes de HTML es su estructura semántica. Esto significa que sus etiquetas no solo sirven para colocar elementos en pantalla, sino que también permiten describir el significado y la función de cada contenido. Utilizar correctamente estas etiquetas facilita la comprensión del código, mejora la accesibilidad y ayuda a los motores de búsqueda a interpretar la información.</p>
+<br>
+
+<h3>Las 20 etiquetas HTML más utilizadas</h3>
+
+<p>HTML dispone de numerosas etiquetas, cada una diseñada para cumplir una función determinada. Conocer las más habituales permite construir páginas web bien organizadas y facilita el trabajo posterior con CSS y JavaScript. Estas son veinte de las etiquetas fundamentales que conviene conocer:</p>
+<br>
+
+<p><strong>1. &lt;html&gt;:</strong> es el elemento raíz del documento y engloba todo el contenido de la página.</p>
+<br>
+
+<p><strong>2. &lt;head&gt;:</strong> contiene la configuración, los metadatos y los enlaces a recursos externos.</p>
+<br>
+
+<p><strong>3. &lt;title&gt;:</strong> establece el título que aparece en la pestaña del navegador.</p>
+<br>
+
+<p><strong>4. &lt;meta&gt;:</strong> proporciona información sobre el documento, como la codificación de caracteres o la configuración para dispositivos móviles.</p>
+<br>
+
+<p><strong>5. &lt;link&gt;:</strong> permite conectar archivos externos, como hojas de estilos CSS o iconos de la página.</p>
+<br>
+
+<p><strong>6. &lt;style&gt;:</strong> permite incorporar reglas CSS directamente dentro del documento HTML.</p>
+<br>
+
+<p><strong>7. &lt;body&gt;:</strong> contiene el contenido visible de la página web.</p>
+<br>
+
+<p><strong>8. &lt;header&gt;:</strong> define la cabecera de una página o de una sección, donde habitualmente encontramos logotipos, títulos o elementos introductorios.</p>
+<br>
+
+<p><strong>9. &lt;nav&gt;:</strong> agrupa los enlaces destinados a la navegación, como los menús que permiten desplazarse entre diferentes apartados.</p>
+<br>
+
+<p><strong>10. &lt;main&gt;:</strong> identifica el contenido principal de la página, diferenciándolo de elementos comunes como la cabecera o el pie.</p>
+<br>
+
+<p><strong>11. &lt;section&gt;:</strong> agrupa contenidos relacionados que pertenecen a una misma temática o apartado.</p>
+<br>
+
+<p><strong>12. &lt;article&gt;:</strong> representa un contenido independiente que puede entenderse por sí mismo, como una noticia, una entrada de blog o una publicación.</p>
+<br>
+
+<p><strong>13. &lt;h1&gt; hasta &lt;h6&gt;:</strong> establecen los diferentes niveles de títulos y subtítulos, organizando la información de mayor a menor jerarquía.</p>
+<br>
+
+<p><strong>14. &lt;p&gt;:</strong> permite estructurar los textos en párrafos para facilitar su lectura.</p>
+<br>
+
+<p><strong>15. &lt;a&gt;:</strong> crea enlaces o hipervínculos que permiten acceder a otras páginas, documentos o secciones del mismo sitio web.</p>
+<br>
+
+<p><strong>16. &lt;img&gt;:</strong> incorpora imágenes mediante la dirección del archivo y permite añadir un texto alternativo para mejorar la accesibilidad.</p>
+<br>
+
+<p><strong>17. &lt;ul&gt; y &lt;ol&gt;:</strong> permiten crear listas sin ordenar, mediante viñetas, o listas ordenadas, mediante números.</p>
+<br>
+
+<p><strong>18. &lt;li&gt;:</strong> define cada uno de los elementos que forman parte de una lista.</p>
+<br>
+
+<p><strong>19. &lt;div&gt;:</strong> es un contenedor genérico de tipo bloque que permite agrupar elementos para organizarlos o aplicarles estilos.</p>
+<br>
+
+<p><strong>20. &lt;span&gt;:</strong> es un contenedor genérico de tipo línea que permite aplicar estilos o identificar partes concretas de un texto sin crear un nuevo bloque.</p>
+<br>
+
+<p>Estas etiquetas constituyen una base fundamental para desarrollar cualquier sitio web. Aunque existen muchas más, dominar su función y saber combinarlas correctamente permite construir estructuras claras, accesibles y fáciles de mantener.</p>
+<br>
+
+<h3>CSS: el diseño visual de la página</h3>
+
+<p>Una vez construida la estructura HTML, llega el momento de trabajar en su apariencia. Aquí entra en juego CSS (Cascading Style Sheets), un lenguaje de hojas de estilos que permite controlar la presentación visual de los elementos de una página web.</p>
+<br>
+
+<p>Con CSS podemos modificar prácticamente cualquier aspecto del diseño: colores, tipografías, tamaños, márgenes, espacios interiores, bordes, sombras, fondos y posiciones. También permite adaptar los contenidos a diferentes resoluciones mediante técnicas de diseño adaptable o responsive, consiguiendo que una misma página se visualice correctamente tanto en un ordenador como en una tableta o un teléfono móvil.</p>
+<br>
+
+<p>Una de sus principales ventajas es que permite separar el contenido de su presentación. De esta manera, podemos modificar el aspecto completo de un sitio web sin necesidad de cambiar su estructura HTML. Además, una misma hoja de estilos puede utilizarse en diferentes páginas, lo que facilita mantener una apariencia uniforme en todo el proyecto.</p>
+<br>
+
+<h3>Flexbox: distribuir y alinear elementos</h3>
+
+<p>Cuando necesitamos organizar elementos dentro de un contenedor, CSS ofrece diferentes sistemas de distribución. Uno de los más utilizados es Flexbox, un modelo de diseño unidimensional que permite distribuir el espacio disponible y alinear elementos de forma flexible, ya sea en horizontal o en vertical.</p>
+<br>
+
+<p>Su funcionamiento se basa en un contenedor principal, al que se aplica la propiedad display: flex, y una serie de elementos secundarios que se distribuyen dentro de él. A partir de ahí, podemos controlar su dirección, alineación, separación y comportamiento cuando cambia el tamaño del espacio disponible.</p>
+<br>
+
+<p>Por ejemplo, imaginemos el menú de navegación de una página web. Mediante Flexbox podemos colocar los enlaces en una misma línea, distribuirlos uniformemente o situar algunos elementos en un extremo y otros en el contrario utilizando propiedades como justify-content. También podemos recurrir a align-items para controlar su alineación en el eje perpendicular.</p>
+<br>
+
+<p>Gracias a su sencillez y flexibilidad, Flexbox resulta especialmente útil para crear menús, barras de navegación, grupos de botones, tarjetas y diferentes componentes de una interfaz.</p>
+<br>
+
+<h3>CSS Grid: organizar el diseño en filas y columnas</h3>
+
+<p>Cuando el diseño requiere distribuir diferentes zonas de una página al mismo tiempo, CSS Grid ofrece una solución muy completa. Se trata de un sistema de diseño bidimensional que permite trabajar simultáneamente con filas y columnas, facilitando la creación de estructuras más complejas.</p>
+<br>
+
+<p>A diferencia de Flexbox, que está orientado principalmente a organizar elementos en una dirección, Grid permite definir una retícula completa y decidir qué espacio ocupa cada componente dentro de ella. Para ello, utiliza propiedades como grid-template-columns, grid-template-rows y grid-template-areas.</p>
+<br>
+
+<p>Un ejemplo habitual sería la estructura de una página web formada por una cabecera, un menú lateral, un contenido central y un pie de página. Mediante Grid podemos definir diferentes áreas con nombre y colocar cada elemento en la zona correspondiente, consiguiendo una distribución ordenada y fácil de modificar.</p>
+<br>
+
+<p>Este sistema resulta especialmente interesante para diseñar la estructura general de un sitio web, crear galerías de imágenes, organizar paneles de administración y construir interfaces que necesitan distribuir numerosos elementos en pantalla.</p>
+<br>
+
+<h3>Bootstrap: desarrollar interfaces de forma más rápida</h3>
+
+<p>Además de utilizar CSS directamente, los desarrolladores pueden recurrir a herramientas que simplifican y aceleran el proceso de diseño. Una de las más conocidas es Bootstrap, un framework de código abierto orientado al desarrollo front-end que proporciona una colección de estilos, componentes y utilidades preparados para utilizarse en proyectos web.</p>
+<br>
+
+<p>Bootstrap incorpora un sistema de rejilla adaptable basado en filas y columnas, que facilita la distribución de los elementos según el tamaño de la pantalla. También ofrece componentes prediseñados como botones, menús de navegación, tarjetas, formularios, ventanas modales y barras de navegación.</p>
+<br>
+
+<p>Su funcionamiento se basa principalmente en el uso de clases CSS predefinidas que se añaden directamente a las etiquetas HTML. Por ejemplo, podemos crear un botón con un estilo determinado o distribuir varios elementos en columnas sin tener que escribir todas las reglas CSS desde cero.</p>
+<br>
+
+<p>Otra de sus ventajas es que facilita la creación de diseños responsive, ya que incorpora diferentes puntos de ruptura que permiten adaptar la distribución de los contenidos a ordenadores, tabletas y móviles. Esto resulta especialmente útil cuando necesitamos desarrollar una interfaz funcional en distintos dispositivos.</p>
+<br>
+
+<p>Sin embargo, es importante conocer los fundamentos de HTML y CSS antes de depender de un framework. Comprender cómo funcionan los estilos permite personalizar los componentes de Bootstrap, solucionar posibles problemas y evitar utilizar clases sin saber realmente qué hacen.</p>
+<br>
+
+<h3>HTML y CSS: dos lenguajes que trabajan juntos</h3>
+
+<p>HTML y CSS forman la base de la presentación de cualquier sitio web. HTML proporciona la estructura y organiza la información, mientras que CSS define su apariencia y distribución. Sistemas como Flexbox y Grid amplían las posibilidades de organización de los elementos, y herramientas como Bootstrap permiten reutilizar componentes y acelerar el desarrollo.</p>
+<br>
+
+<p>Conocer estas tecnologías y saber cuándo utilizar cada una permite crear páginas web más ordenadas, atractivas, accesibles y adaptables. Al final, una buena página no depende únicamente de su apariencia, sino también de cómo está construida y de lo fácil que resulta utilizarla.</p>
+<br><br>
+        
+        <p><strong>Para mas informacion :</strong><br>
+          <a href="https://lenguajehtml.com/html/?classId=c69e8f66-4b41-42af-a411-b7788c4b36c5" target="_blank" rel="noopener noreferrer">Guía de HTML en MDN</a><br>
+          <a href="https://lenguajecss.com/css/?classId=c69e8f66-4b41-42af-a411-b7788c4b36c5" target="_blank" rel="noopener noreferrer">Guia de CSS en MDN</a>
+        </p>
+      </div>
+    </main>
+
+    <!-- Pie de página: El botón de volver a inicio a la izquierda y los logos a la derecha -->
+    <footer class="footer">
+      <a href="index.html" class="boton">Volver al Inicio</a>
+      <div class="logosFooter">
+        <img src="img/logotipo.png" alt="Logotipo institucional">
+        <img src="img/logoFP.png" alt="Logotipo del centro de Formación Profesional">
+      </div>
+    </footer>
+
+  </div>
+
+</body>
+</html>

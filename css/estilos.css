@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Joti+One&family=Kavoon&display=swap');
+
+:root {
+  --turquesa: #0DAEAE;        /* Color principal de títulos/fondos */
+  --borde: #D6F0EF;          /* Color claro de bordes/fondos de contenido */
+  --borde-oscuro: #8BCACA;   /* Tono turquesa medio */
+  --blanco: #FFFFFF;
+  --texto: #000000;
+  --acento-amarillo: #EDC05E; /* Color dorado para los bordes del botón */
+}
+
+/* Para que el texto ni el div que lo contiene este centrado y no salga de su lugar*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  background: #D6F0EF;
+  color: var(--texto);
+  font-family: 'Josefin Sans', Arial, sans-serif;
+}
+
+/* FLEXBOX: Centra todo el marco principal horizontal y verticalmente en la pantalla */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #8BCACA;
+  padding: 15px; /* Mini marco exterior elegante */
+}
+
+/* CSS GRID: Contenedor principal estructurado en cabecera contenido y footer */
+.marco {
+  width: 100%;
+  max-width: 1500px;
+  min-height: 85vh;
+  margin: 0 auto;
+  padding: 12px 20px 20px;
+  background: var(--turquesa);
+  border: 6px solid var(--borde-oscuro);
+  
+  display: grid;
+  grid-template-areas:
+    "cabecera"
+    "contenido"
+    "footer";
+  grid-template-rows: auto 1fr auto;
+  gap: 15px;
+}
+
+/* CSS GRID: Cabecera dividida internamente en 2 columnas (Logo + Centro) */
+.cabecera {
+  grid-area: cabecera;
+  width: 100%;
+  min-height: 110px;
+  display: grid;
+  grid-template-columns: 85px 1fr;
+  align-items: center;
+  gap: 15px;
+  padding: 8px 10px 10px;
+}
+
+.enlaceLogo {
+  display: block;
+  width: 75px;
+  height: 75px;
+  flex-shrink: 0;
+}
+
+.imgLogo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.cabecera-centro {
+  min-width: 0;
+}
+
+/* Tipografía fluida con clamp para adaptarse a cualquier pantalla */
+h1 {
+  margin: 0;
+  color: var(--blanco);
+  font-family: 'Kavoon', cursive;
+  font-size: clamp(22px, 4vw, 55px);
+  font-weight: 400;
+  line-height: 1.15;
+  text-align: center;
+}
+
+/* FLEXBOX: Organiza los enlaces del menú de navegación horizontalmente a la derecha */
+nav {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 18px;
+}
+
+nav a {
+  color: white;
+  font-family: 'Joti One', cursive;
+  font-weight: 400;
+  font-size: clamp(13px, 1.8vw, 26px);
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* IMAGENES: contenido */
+.imagenesPortadas {
+  grid-area: contenido;
+  width: 100%;
+  height: clamp(220px, 32vw, 480px);
+  margin: 0;
+  position: relative;
+  background: var(--borde);
+  overflow: hidden;
+}
+
+.imagenesPortadas img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none; /* Ocultas por defecto para el efecto hover */
+}
+
+.imagenesPortadas img.imagen1 {
+  display: block;
+}
+
+/* Interactividad CSS (:has): Cambia la imagen de portada según el enlace del menú en el que esté el ratón */
+.marco {
+  &:has(nav a:hover) .imagenesPortadas img {
+    display: none;
+  }
+
+  &:has(.enlaceMenu1:hover) .imagenesPortadas .imagen1,
+  &:has(.enlaceMenu2:hover) .imagenesPortadas .imagen2,
+  &:has(.enlaceMenu3:hover) .imagenesPortadas .imagen3,
+  &:has(.enlaceMenu4:hover) .imagenesPortadas .imagen4,
+  &:has(.enlaceMenu5:hover) .imagenesPortadas .imagen5 {
+    display: block;
+  }
+}
+
+/* FLEXBOX: Footer inferior que reparte logos y boton en los extremos opuestos */
+.footer {
+  grid-area: footer;
+  width: 100%;
+  min-height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 10px 0;
+}
+
+.boton {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 3px solid var(--acento-amarillo);
+  border-radius: 20px;
+  color: #111111
+;  background: #65C3D8;
+  text-decoration: none;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: clamp(12px, 1.5vw, 22px);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.boton:hover {
+  filter: brightness(1.06); /*Da brillo al botón para darle realismo y queda mas bonito*/
+}
+
+/* FLEXBOX: Alinea los logotipos del footer en fila hacia la derecha */
+.logosFooter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+.logosFooter img {
+  display: block;
+  max-width: clamp(75px, 10vw, 150px);
+  max-height: clamp(45px, 6vw, 90px);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+
+/* PÁGINAS SECUNDARIAS DE CONTENIDO para que al cambiar de tema se vea bonito*/
+
+
+/* FLEXBOX (Columna): Iguala la altura exacta*/
+.columnaContenido {
+  grid-area: contenido;
+  width: 100%;
+  height: clamp(220px, 32vw, 480px);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Caja principal de texto: Ocupa todo el espacio interior y permite scroll */
+.cajaTexto {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 15px 20px;
+  background: var(--borde);
+  overflow-y: auto;
+  font-size: clamp(12px, 1.6vw, 24px);
+  line-height: 1.18;
+  letter-spacing: .1px;
+}
+
+.cajaTexto h2 {
+  margin: 0 0 10px;
+  font-size: clamp(12px, 1.8vw, 26px);
+  font-weight: 700;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.cajaTexto p {
+  margin: 0;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+/* MEDIA QUERY: OPTIMIZACIÓN PARA MÓVILES (Ancho máximo 430px recomendado en tutoriales y foros) */
+
+@media (max-width: 430px) {
+  body {
+    padding: 6px;
+  }
+
+  .marco {
+    padding: 6px 8px;
+    border-width: 4px;
+  }
+
+  .cabecera {
+    grid-template-columns: 58px 1fr;
+    padding: 4px;
+    gap: 6px;
+  }
+
+  .enlaceLogo {
+    width: 54px;
+    height: 54px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  nav {
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  nav a {
+    font-size: 12px;
+  }
+
+  .imagenesPortadas,
+  .columnaContenido {
+    height: 175px; /* Iguala la altura móvil tanto en Home como en secundarias */
+  }
+
+  .footer {
+    padding: 8px 4px 0;
+    gap: 8px;
+  }
+
+  .boton {
+    padding: 6px 12px;
+    font-size: 11px;
+    border-width: 2px;
+  }
+
+  .logosFooter {
+    gap: 6px;
+  }
+
+  .logosFooter img {
+    max-width: 70px;
+    max-height: 42px;
+  }
+
+  .cajaTexto {
+    padding: 10px;
+    font-size: 12px;
+  }
+}
